@@ -95,13 +95,15 @@ const TvDetails = () => {
           <h1 className="mt-5 mb-3 text-2xl">Overview</h1>
           <p className="mb-8">{info.detail.overview}</p>
 
-          <Link
-            to={`${pathname}/trailer`}
-            className="rounded-lg bg-[#6556CD] p-10 px-6 py-3"
-          >
-            <i className="ri-play-fill mr-2 text-xl"></i>
-            Play Trailer
-          </Link>
+          {info.videos && (
+            <Link
+              to={`${pathname}/trailer`}
+              className="group inline-flex items-center gap-3 rounded-lg border-2 border-zinc-600 bg-zinc-900/50 px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:border-zinc-400 hover:bg-zinc-800/70 hover:shadow-lg hover:shadow-zinc-900/50"
+            >
+              <i className="ri-play-fill text-2xl text-yellow-500 transition-transform duration-300 group-hover:scale-110"></i>
+              <span>Play Trailer</span>
+            </Link>
+          )}
         </div>
       </div>
 

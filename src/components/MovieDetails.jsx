@@ -99,10 +99,10 @@ const Moviedetails = () => {
           {info.videos && (
             <Link
               to={`${pathname}/trailer`}
-              className="rounded-lg bg-[#6556CD] px-6 py-3"
+              className="group inline-flex items-center gap-3 rounded-lg border-2 border-zinc-600 bg-zinc-900/50 px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:border-zinc-400 hover:bg-zinc-800/70 hover:shadow-lg hover:shadow-zinc-900/50"
             >
-              <i className="ri-play-fill mr-2 text-xl"></i>
-              Play Trailer
+              <i className="ri-play-fill text-2xl text-yellow-500 transition-transform duration-300 group-hover:scale-110"></i>
+              <span>Play Trailer</span>
             </Link>
           )}
         </div>

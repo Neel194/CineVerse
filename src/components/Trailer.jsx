@@ -49,9 +49,10 @@ const Trailer = () => {
           </p>
           <button
             onClick={() => navigate(-1)}
-            className="rounded-lg bg-[#6556CD] px-6 py-3 text-white hover:bg-[#6556CD]/80"
+            className="group inline-flex items-center gap-2 rounded-lg border-2 border-zinc-600 bg-zinc-900/50 px-6 py-3 font-semibold text-white transition-all duration-300 hover:border-zinc-400 hover:bg-zinc-800/70 hover:shadow-lg"
           >
-            Go Back
+            <i className="ri-arrow-left-line text-xl transition-transform duration-300 group-hover:-translate-x-1"></i>
+            <span>Go Back</span>
           </button>
         </div>
       </div>
@@ -65,9 +66,10 @@ const Trailer = () => {
       <div className="relative h-full w-full p-10">
         <button
           onClick={() => navigate(-1)}
-          className="absolute top-5 left-5 z-10 rounded-full bg-[#6556CD] p-3 text-white hover:bg-[#6556CD]/80"
+          className="group absolute top-5 right-5 z-10 flex h-12 w-12 items-center justify-center rounded-full border-2 border-zinc-600 bg-zinc-900/80 backdrop-blur-sm text-white transition-all duration-300 hover:border-zinc-400 hover:bg-zinc-800/90 hover:scale-110 hover:shadow-lg hover:shadow-black/50"
+          aria-label="Close trailer"
         >
-          <i className="ri-close-line text-2xl"></i>
+          <i className="ri-close-line text-2xl transition-transform duration-300 group-hover:rotate-90"></i>
         </button>
 
         <div className="flex h-full w-full items-center justify-center">
