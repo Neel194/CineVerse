@@ -14,9 +14,11 @@ const TvDetails = () => {
   useEffect(() => {
     dispatch(asyncloadtv(id));
     return () => {
-      dispatch(removetv());
+      if (!pathname.includes("/trailer")) {
+        dispatch(removetv());
+      }
     };
-  }, []);
+  }, [id, dispatch, pathname]);
   console.log(info);
   return info ? (
     <div

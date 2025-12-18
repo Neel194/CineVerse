@@ -14,9 +14,11 @@ const Moviedetails = () => {
   useEffect(() => {
     dispatch(asyncloadmovie(id));
     return () => {
-      dispatch(removemovie());
+      if (!pathname.includes("/trailer")) {
+        dispatch(removemovie());
+      }
     };
-  }, []);
+  }, [id, dispatch, pathname]);
   console.log(info);
   return info ? (
     <div
