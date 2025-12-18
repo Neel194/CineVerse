@@ -19,7 +19,6 @@ const Moviedetails = () => {
       }
     };
   }, [id, dispatch, pathname]);
-  console.log(info);
   return info ? (
     <div
       style={{
@@ -36,6 +35,11 @@ const Moviedetails = () => {
         <Link
           onClick={() => navigate(-1)}
           className="ri-arrow-left-line transition-colors hover:text-red-500"
+        ></Link>
+        <Link
+          to="/"
+          className="ri-home-line transition-colors hover:text-red-500"
+          title="Go to Home"
         ></Link>
         <a href={info.detail.homepage} target="_blank" rel="noreferrer" className="transition-colors hover:text-red-500">
           <i className="ri-external-link-fill"></i>
@@ -62,7 +66,7 @@ const Moviedetails = () => {
           src={`https://image.tmdb.org/t/p/original/${
             info.detail.poster_path || info.detail.backdrop_path
           }`}
-          alt=""
+          alt={info.detail.title || info.detail.name || "Movie poster"}
         />
 
         <div className="content ml-[5%] text-white">
@@ -77,16 +81,34 @@ const Moviedetails = () => {
             </small>
           </h1>
 
-          <div className="mt-3 mb-5 flex items-center gap-x-3">
-            <span className="flex h-[6vh] w-[6vh] items-center justify-center rounded-full bg-yellow-600 text-xl font-semibold text-white">
-              {(info.detail.vote_average * 10).toFixed()} <sup>%</sup>
-            </span>
-            <h1 className="w-[60px] text-2xl leading-6 font-semibold">
-              User Score
-            </h1>
-            <h1>{info.detail.release_date}</h1>
-            <h1>{info.detail.genres.map((g) => g.name).join(",")}</h1>
-            <h1>{info.detail.runtime}min</h1>
+          <div className="mt-3 mb-5 flex flex-wrap items-center gap-3">
+            <div className="flex items-center gap-2">
+              <span className="flex h-[6vh] w-[6vh] items-center justify-center rounded-full bg-yellow-600 text-xl font-semibold text-white shadow-lg shadow-yellow-600/30">
+                {(info.detail.vote_average * 10).toFixed()} <sup>%</sup>
+              </span>
+              <span className="text-lg font-semibold text-zinc-200">User Score</span>
+            </div>
+            
+            <div className="flex items-center gap-2 rounded-lg border border-red-600/30 bg-red-600/10 px-4 py-2 backdrop-blur-sm">
+              <i className="ri-calendar-line text-red-500"></i>
+              <span className="text-zinc-200 font-medium">{info.detail.release_date}</span>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-2">
+              {info.detail.genres.map((g, idx) => (
+                <span
+                  key={idx}
+                  className="rounded-full border border-red-600/40 bg-red-600/10 px-4 py-1.5 text-sm font-medium text-zinc-200 backdrop-blur-sm transition-all duration-300 hover:border-red-600/60 hover:bg-red-600/20"
+                >
+                  {g.name}
+                </span>
+              ))}
+            </div>
+
+            <div className="flex items-center gap-2 rounded-lg border border-red-600/30 bg-red-600/10 px-4 py-2 backdrop-blur-sm">
+              <i className="ri-time-line text-red-500"></i>
+              <span className="text-zinc-200 font-medium">{info.detail.runtime} min</span>
+            </div>
           </div>
 
           <h1 className="text-xl font-semibold text-zinc-200 italic">
@@ -120,7 +142,7 @@ const Moviedetails = () => {
                 className="h-[5vh] w-[5vh] rounded-md object-cover"
                 key={i}
                 src={`https://image.tmdb.org/t/p/original/${w.logo_path}`}
-                alt=""
+                alt={w.provider_name || "Streaming provider"}
               />
             ))}
           </div>
@@ -134,7 +156,7 @@ const Moviedetails = () => {
                 className="h-[5vh] w-[5vh] rounded-md object-cover"
                 key={i}
                 src={`https://image.tmdb.org/t/p/original/${w.logo_path}`}
-                alt=""
+                alt={w.provider_name || "Streaming provider"}
               />
             ))}
           </div>
@@ -148,7 +170,7 @@ const Moviedetails = () => {
                 className="h-[5vh] w-[5vh] rounded-md object-cover"
                 key={i}
                 src={`https://image.tmdb.org/t/p/original/${w.logo_path}`}
-                alt=""
+                alt={w.provider_name || "Streaming provider"}
               />
             ))}
           </div>

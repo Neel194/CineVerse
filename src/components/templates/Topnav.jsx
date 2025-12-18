@@ -60,7 +60,7 @@ const Topnav = () => {
                       }`
                     : noimage
                 }
-                alt=""
+                alt={s.title || s.name || s.original_title || s.original_name || "Search result"}
               />
               <span>
                 {s.title || s.name || s.original_title || s.original_name}

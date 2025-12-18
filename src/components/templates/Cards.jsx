@@ -19,7 +19,7 @@ const Cards = ({ data, title }) => {
                   }`
                 : noimage
             }
-            alt=""
+            alt={c.name || c.title || c.original_name || c.original_title || "Media poster"}
           />
           <h1 className="mt-3 text-xl font-semibold text-zinc-300 transition-colors duration-300 group-hover:text-red-400">
             {c.name || c.title || c.original_name || c.original_title}

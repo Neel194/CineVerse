@@ -17,8 +17,7 @@ const PersonDetails = () => {
     return () => {
       dispatch(removeperson());
     };
-  }, []);
-  console.log(info);
+  }, [id, dispatch]);
   return info ? (
     <div
       style={{
@@ -37,6 +36,11 @@ const PersonDetails = () => {
         <Link
           onClick={() => navigate(-1)}
           className="ri-arrow-left-line transition-colors hover:text-red-500"
+        ></Link>
+        <Link
+          to="/"
+          className="ri-home-line transition-colors hover:text-red-500"
+          title="Go to Home"
         ></Link>
         <a href={info.detail.homepage} target="_blank" rel="noreferrer" className="transition-colors hover:text-red-500">
           <i className="ri-external-link-fill"></i>
@@ -65,7 +69,7 @@ const PersonDetails = () => {
               ? `https://image.tmdb.org/t/p/original/${info.detail.profile_path}`
               : noimage
           }
-          alt=""
+          alt={info.detail.name || "Person profile"}
         />
 
         <div className="content ml-[5%] text-white">
@@ -79,18 +83,25 @@ const PersonDetails = () => {
             )}
           </h1>
 
-          <div className="mt-3 mb-5 flex items-center gap-x-3">
-            <h1 className="text-xl font-semibold text-zinc-200">
-              {info.detail.known_for_department}
-            </h1>
-            <h1>
-              <i className="ri-calendar-line text-yellow-500"></i>{" "}
-              {info.detail.birthday}
-            </h1>
-            <h1>
-              <i className="ri-map-pin-line text-yellow-500"></i>{" "}
-              {info.detail.place_of_birth}
-            </h1>
+          <div className="mt-3 mb-5 flex flex-wrap items-center gap-3">
+            <div className="flex items-center gap-2 rounded-lg border border-red-600/30 bg-red-600/10 px-4 py-2 backdrop-blur-sm">
+              <i className="ri-user-star-line text-red-500"></i>
+              <span className="text-zinc-200 font-medium">{info.detail.known_for_department}</span>
+            </div>
+
+            {info.detail.birthday && (
+              <div className="flex items-center gap-2 rounded-lg border border-red-600/30 bg-red-600/10 px-4 py-2 backdrop-blur-sm">
+                <i className="ri-calendar-line text-red-500"></i>
+                <span className="text-zinc-200 font-medium">{info.detail.birthday}</span>
+              </div>
+            )}
+
+            {info.detail.place_of_birth && (
+              <div className="flex items-center gap-2 rounded-lg border border-red-600/30 bg-red-600/10 px-4 py-2 backdrop-blur-sm">
+                <i className="ri-map-pin-line text-red-500"></i>
+                <span className="text-zinc-200 font-medium">{info.detail.place_of_birth}</span>
+              </div>
+            )}
           </div>
 
           {info.detail.biography && (
