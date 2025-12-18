@@ -49,7 +49,7 @@ const Trailer = () => {
           </p>
           <button
             onClick={() => navigate(-1)}
-            className="group inline-flex items-center gap-2 rounded-lg border-2 border-zinc-600 bg-zinc-900/50 px-6 py-3 font-semibold text-white transition-all duration-300 hover:border-zinc-400 hover:bg-zinc-800/70 hover:shadow-lg"
+            className="group inline-flex items-center gap-2 rounded-lg border-2 border-red-600/50 bg-zinc-900/50 px-6 py-3 font-semibold text-white transition-all duration-300 hover:border-red-600 hover:bg-red-600/10 hover:shadow-lg hover:shadow-red-600/30"
           >
             <i className="ri-arrow-left-line text-xl transition-transform duration-300 group-hover:-translate-x-1"></i>
             <span>Go Back</span>
@@ -66,7 +66,7 @@ const Trailer = () => {
       <div className="relative h-full w-full p-10">
         <button
           onClick={() => navigate(-1)}
-          className="group absolute top-5 right-5 z-10 flex h-12 w-12 items-center justify-center rounded-full border-2 border-zinc-600 bg-zinc-900/80 backdrop-blur-sm text-white transition-all duration-300 hover:border-zinc-400 hover:bg-zinc-800/90 hover:scale-110 hover:shadow-lg hover:shadow-black/50"
+          className="group absolute top-5 right-5 z-10 flex h-12 w-12 items-center justify-center rounded-full border-2 border-red-600/50 bg-zinc-900/80 backdrop-blur-sm text-white transition-all duration-300 hover:border-red-600 hover:bg-red-600/20 hover:scale-110 hover:shadow-lg hover:shadow-red-600/30"
           aria-label="Close trailer"
         >
           <i className="ri-close-line text-2xl transition-transform duration-300 group-hover:rotate-90"></i>

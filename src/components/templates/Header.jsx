@@ -11,7 +11,7 @@ const Header = ({ data }) => {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       }}
-      className="flex h-[58vh] w-full flex-col items-start justify-center p-[7%]"
+      className="relative flex h-[58vh] w-full flex-col items-start justify-center p-[7%]"
     >
       <h1 className="w-[70%] text-5xl font-black text-white">
         {data.title || data.name || data.original_title || data.original_name}
@@ -23,7 +23,7 @@ const Header = ({ data }) => {
         {data.overview && (
           <Link
             to={`/${data.media_type}/details/${data.id}`}
-            className="text-blue-400"
+            className="ml-2 text-red-500 transition-colors hover:text-red-400 hover:underline"
           >
             more
           </Link>
@@ -35,8 +35,12 @@ const Header = ({ data }) => {
         <i className="ri-album-fill ml-5 text-yellow-500"></i>{" "}
         {data.media_type ? data.media_type.toUpperCase() : "NA"}
       </p>
-      <Link className="mt-5 rounded bg-[#6556CD] px-4 py-2 text-white">
-        Watch Trailer
+      <Link
+        to={`/${data.media_type}/details/${data.id}`}
+        className="group mt-5 inline-flex items-center gap-2 rounded border-2 border-red-600/50 bg-zinc-900/50 px-4 py-2 text-white transition-all duration-300 hover:border-red-600 hover:bg-red-600/10 hover:shadow-lg hover:shadow-red-600/20"
+      >
+        <i className="ri-play-fill text-red-500"></i>
+        <span>Watch Trailer</span>
       </Link>
     </div>
   );

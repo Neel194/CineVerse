@@ -7,7 +7,7 @@ const HorizontalCards = ({ data }) => {
         <Link
           to={`/${d.media_type}/details/${d.id}`}
           key={i}
-          className="mr-5 mb-5 h-[37vh] min-w-[15%] bg-zinc-900"
+          className="group mr-5 mb-5 h-[37vh] min-w-[15%] bg-zinc-900 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-red-600/20"
         >
           <img
             className="h-[55%] w-full object-cover"
@@ -18,7 +18,7 @@ const HorizontalCards = ({ data }) => {
           />
           <div className="h-[45%] p-3 text-white">
             {" "}
-            <h1 className="line-clamp-1 text-xl font-semibold">
+            <h1 className="line-clamp-1 text-xl font-semibold transition-colors duration-300 group-hover:text-red-400">
               {d.title || d.name || d.original_title || d.original_name}
             </h1>
             <p className="">

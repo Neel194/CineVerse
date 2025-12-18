@@ -49,7 +49,7 @@ const Topnav = () => {
             <Link
               to={`/${s.media_type}/details/${s.id}`}
               key={i}
-              className="flex w-full items-center justify-start border-b-2 border-zinc-100 p-10 font-semibold text-zinc-600 duration-300 hover:bg-zinc-300 hover:text-black"
+              className="flex w-full items-center justify-start border-b-2 border-zinc-100 p-10 font-semibold text-zinc-600 duration-300 hover:bg-red-50 hover:text-red-600"
             >
               <img
                 className="mr-5 h-[10vh] w-[10vh] rounded object-cover shadow-lg"

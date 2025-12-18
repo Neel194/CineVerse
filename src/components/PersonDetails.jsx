@@ -36,20 +36,22 @@ const PersonDetails = () => {
       <nav className="mb-2 flex h-[10vh] w-full items-center gap-10 text-xl text-zinc-100 flex-shrink-0">
         <Link
           onClick={() => navigate(-1)}
-          className="ri-arrow-left-line hover:text-[#6556DC]"
+          className="ri-arrow-left-line transition-colors hover:text-red-500"
         ></Link>
-        <a href={info.detail.homepage} target="_blank" rel="noreferrer">
+        <a href={info.detail.homepage} target="_blank" rel="noreferrer" className="transition-colors hover:text-red-500">
           <i className="ri-external-link-fill"></i>
         </a>
         <a
           target="_blank"
           href={`https://www.wikidata.org/wiki/${info.externalId.wikidata_id}`}
+          className="transition-colors hover:text-red-500"
         >
           <i className="ri-earth-fill"></i>
         </a>
         <a
           target="_blank"
           href={`https://www.imdb.com/name/${info.externalId.imdb_id}/`}
+          className="transition-colors hover:text-red-500"
         >
           imdb
         </a>

@@ -54,7 +54,7 @@ const Movie = () => {
         <h1 className="text-2xl font-semibold text-zinc-400">
           <i
             onClick={() => navigate(-1)}
-            className="ri-arrow-left-line mr-[5%] hover:text-[#6556cd]"
+            className="ri-arrow-left-line mr-[5%] transition-colors hover:text-red-500"
           ></i>
           Movie
           <small className="ml-2 text-sm text-zinc-600">({category})</small>
