@@ -94,13 +94,15 @@ const Moviedetails = () => {
           {/* <h1 className="mt-5 mb-3 text-2xl">Movie Translated</h1>
           <p className="mb-8">{info.translations.join(", ")}</p> */}
 
-          <Link
-            to={`${pathname}/trailer`}
-            className="rounded-lg bg-[#6556CD] p-10 px-6 py-3"
-          >
-            <i className="ri-play-fill mr-2 text-xl"></i>
-            Play Trailer
-          </Link>
+          {info.videos && (
+            <Link
+              to={`${pathname}/trailer`}
+              className="rounded-lg bg-[#6556CD] px-6 py-3"
+            >
+              <i className="ri-play-fill mr-2 text-xl"></i>
+              Play Trailer
+            </Link>
+          )}
         </div>
       </div>
 
