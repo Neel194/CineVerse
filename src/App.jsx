@@ -9,6 +9,8 @@ import Moviedetails from "./components/Moviedetails";
 import TvDetails from "./components/TvDetails";
 import PersonDetails from "./components/PersonDetails";
 import Trailer from "./components/Trailer";
+import About from "./components/About";
+import Contact from "./components/Contact";
 
 const App = () => {
   return (
@@ -27,6 +29,9 @@ const App = () => {
 
         <Route path="/person" element={<People />} />
         <Route path="/person/details/:id" element={<PersonDetails />} />
+
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </div>
   );

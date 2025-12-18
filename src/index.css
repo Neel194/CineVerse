@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+* {
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
 ::-webkit-scrollbar {
   width: 7px;
   height: 7px;
@@ -30,7 +38,7 @@ select {
   color: #fff;
   cursor: pointer;
   font-size: 1em;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 select::-ms-expand {
